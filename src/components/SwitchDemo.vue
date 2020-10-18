@@ -1,13 +1,19 @@
 <template>
     <div>
-        <p>SwitchDemo文档</p>
-        <p>SwitchDemo文档</p><p>SwitchDemo文档</p>
+       <Switch v-model:value="bool"></Switch>
     </div>
 </template>
 
 <script lang="ts">
+    import Switch from '../lib/Switch.vue'
+    import {ref} from 'vue'
     export default {
-        name: 'SwitchDemo'
+        name: 'SwitchDemo',
+        components:{Switch},
+        setup(){
+            const bool = ref(false)
+            return {bool}
+        }
     };
 </script>
 
