@@ -6,8 +6,8 @@
       <h2>文档</h2>
         <ol>
           <li><router-link to="/doc/intro">介绍</router-link></li>
-          <li><router-link to="/doc/get-started">开始</router-link></li>
           <li><router-link to="/doc/install">安装</router-link></li>
+          <li><router-link to="/doc/get-started">开始</router-link></li>
         </ol>
       <h2>组件列表</h2>
       <ol>
@@ -76,11 +76,14 @@ export default {
     >main {
       flex-grow: 1;
       padding: 16px;
-      background: white;
+      background: #f5f5f5;
+      margin: 20px 14px 9px 6px;
+      border-radius: 6px;
     }
   }
   aside {
-    background: lightblue;
+    background: #3e80b7;
+    color: #f6f8fa;
     width: 150px;
     padding: 16px 0;
     position: fixed;
@@ -88,9 +91,10 @@ export default {
     left: 0;
     padding-top: 70px;
     height: 100%;
+    z-index: 2;
     >h2 {
       margin-bottom: 4px;
-      padding: 0 16px;
+      padding: 4px 16px;
     }
     >ol {
       >li {
@@ -99,8 +103,14 @@ export default {
           padding: 4px 16px;
           text-decoration: none;
         }
+        &:hover{
+          border-bottom: none;
+          background: white;
+          color: #3e80b7;
+        }
         .router-link-active {
           background: white;
+          color: #3e80b7;
         }
       }
     }

@@ -1,7 +1,8 @@
 <template>
-<div>Dialog 示例</div>
-<h1>示例1</h1>
-<Button @click="toggle">toggle</Button>
+  <h1>Dialog示例</h1>
+  <Demo :component="Dialog1Demo" />
+  <Demo :component="Dialog2Demo" />
+<!--<Button @click="toggle">toggle</Button>
 <Dialog v-model:visible="x" :closeOnClickOverlay="false" :ok="f1" :cancel="f2">
   <template v-slot:content>
     <strong>hi</strong>
@@ -12,12 +13,18 @@
   </template>
 </Dialog>
 <h1>示例2</h1>
-<Button @click="showDialog">show</Button>
+<Button @click="showDialog">show</Button>-->
 </template>
 
 <script lang="ts">
 import Dialog from '../lib/Dialog.vue'
 import Button from '../lib/Button.vue'
+import Dialog1Demo from './Dialog1.demo.vue'
+import Dialog2Demo from './Dialog2.demo.vue'
+import 'prismjs';
+import 'prismjs/themes/prism-okaidia.css'
+const Prism = (window as any).Prism
+import Demo from './Demo.vue'
 import {
   ref,
   h
@@ -28,10 +35,11 @@ import {
 export default {
   components: {
     Dialog,
-    Button
+    Button,
+    Demo
   },
   setup() {
-    const x = ref(false)
+    /*const x = ref(false)
     const toggle = () => {
       x.value = !x.value
     }
@@ -50,13 +58,16 @@ export default {
           console.log('cancel')
         }
       })
-    }
+    }*/
     return {
-      x,
+     /* x,
       toggle,
       f1,
       f2,
-      showDialog
+      showDialog,*/
+      Dialog1Demo,
+      Dialog2Demo,
+      Prism
     }
   }
 }

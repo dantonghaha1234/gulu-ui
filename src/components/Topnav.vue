@@ -2,12 +2,12 @@
 <div class="topnav">
   <router-link to="/" class="logo">
     <svg class="icon">
-      <use xlink:href="#icon-king"></use>
+      <use xlink:href="#icon-xuehua"></use>
     </svg>
   </router-link>
   <ul class="menu">
     <li>
-      <router-link to="/doc">文档</router-link>
+      <router-link to="/doc/intro">文档</router-link>
     </li>
   </ul>
   <svg v-if="toggleMenuButtonVisible" class="toggleAside" @click="toggleMenu">
@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$color: #007974;
+$color: #309ffb;
 
 .topnav {
   color: $color;
@@ -54,6 +54,8 @@ $color: #007974;
   z-index: 10;
   justify-content: center;
   align-items: center;
+  background: #f5f5f5;
+  box-shadow: 0 3px 3px #4984b5;
 
   >.logo {
     max-width: 6em;
@@ -83,7 +85,7 @@ $color: #007974;
     top: 50%;
     transform: translateY(-50%);
     display: none;
-    background: fade-out(black, 0.9);
+    /*background: fade-out(black, 0.9);*/
   }
 
   @media (max-width: 500px) {

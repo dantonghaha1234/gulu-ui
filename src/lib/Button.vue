@@ -16,10 +16,6 @@ export default {
       type: String,
       default: "normal",
     },
-    level: {
-      type: String,
-      default: "normal",
-    },
     disabled: {
       type: Boolean,
       default: false,
@@ -30,12 +26,11 @@ export default {
     }
   },
   setup(props) {
-    const { theme, size, level } = props;
+    const { theme, size} = props;
     const classes = computed(() => {
       return {
         [`gulu-theme-${theme}`]: theme,
         [`gulu-size-${size}`]: size,
-        [`gulu-level-${level}`]: level,
       };
     });
     return { classes };
@@ -79,22 +74,31 @@ $grey: grey;
   &::-moz-focus-inner {
     border: 0;
   }
-  &.gulu-theme-link {
-    border-color: transparent;
-    box-shadow: none;
-    color: $blue;
+  &.gulu-theme-normal {
+    background: $blue;
+    color: #fff;
+   border: none;
     &:hover,
     &:focus {
-      color: lighten($blue, 10%);
+      background: darken($blue, 5%);
     }
   }
-  &.gulu-theme-text {
-    border-color: transparent;
-    box-shadow: none;
-    color: inherit;
+  &.gulu-theme-warm {
+    background-color: #FFB800;
+    color: #fff;
+    border: none;
     &:hover,
     &:focus {
-      background: darken(white, 5%);
+      background: darken( #FFB800, 5%);
+    }
+  }
+  &.gulu-theme-danger {
+    background-color: #FF5722;
+    color: #fff;
+    border: none;
+    &:hover,
+    &:focus {
+      background: darken( #FF5722, 5%);
     }
   }
   &.gulu-size-big {
@@ -107,66 +111,13 @@ $grey: grey;
     height: 20px;
     padding: 0 4px;
   }
-  &.gulu-theme-button {
-    &.gulu-level-main {
-      background: $blue;
-      color: white;
-      border-color: $blue;
-      &:hover,
-      &:focus {
-        background: darken($blue, 10%);
-        border-color: darken($blue, 10%);
-      }
-    }
-    &.gulu-level-danger {
-      background: $red;
-      border-color: $red;
-      color: white;
-      &:hover,
-      &:focus {
-        background: darken($red, 10%);
-        border-color: darken($red, 10%);
-      }
-    }
-  }
-  &.gulu-theme-link {
-    &.gulu-level-danger {
-      color: $red;
-      &:hover,
-      &:focus {
-        color: darken($red, 10%);
-      }
-    }
-  }
-  &.gulu-theme-text {
-    &.gulu-level-main {
-      color: $blue;
-      &:hover,
-      &:focus {
-        color: darken($blue, 10%);
-      }
-    }
-    &.gulu-level-danger {
-      color: $red;
-      &:hover,
-      &:focus {
-        color: darken($red, 10%);
-      }
-    }
-  }
-  &.gulu-theme-button {
+  &.gulu-button {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
       &:hover {
-        border-color: $grey;
+        border-color: rgb(217, 217, 217);
       }
-    }
-  }
-  &.gulu-theme-link, &.gulu-theme-text {
-    &[disabled] {
-      cursor: not-allowed;
-      color: $grey;
     }
   }
   > .gulu-loadingIndicator{

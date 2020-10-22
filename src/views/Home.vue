@@ -3,11 +3,11 @@
   <div class="topnavAndBanner">
     <Topnav />
     <div class="banner">
-      <h1>轱辘UI</h1>
-      <h2>一个厉害的 UI 框架</h2>
+      <h1>VUE UI</h1>
+      <h2>一个简单的 UI 框架</h2>
       <p class="actions">
         <a href="https://github.com">GitHub</a>
-        <router-link to="/doc">开始</router-link>
+        <router-link to="/doc/intro">开始</router-link>
       </p>
     </div>
   </div>
@@ -15,10 +15,10 @@
     <ul>
       <li>
         <svg>
-          <use xlink:href="#icon-vue"></use>
+          <use xlink:href="#icon-Vue"></use>
         </svg>
         <h3>基于 Vue 3</h3>
-        <p>骄傲地使用了 Vue 3 Composition API</p>
+        <p>使用了 Vue 3 Composition API</p>
       </li>
       <li>
         <svg>
@@ -51,10 +51,11 @@ export default {
 <style lang="scss" scoped>
 $green: #02bcb0;
 $border-radius: 4px;
-$color: #007974;
+$color: #298ada;
 
 .topnavAndBanner {
-  background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%, rgba(183, 233, 230, 1) 100%);
+  background: url("../assets/bg.png");
+  /*background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%, rgba(183, 233, 230, 1) 100%);*/
   clip-path: ellipse(80% 60% at 50% 40%);
 }
 
@@ -117,7 +118,7 @@ $color: #007974;
 
     a {
       margin: 0 8px;
-      background: $green;
+      background: #309ffb;
       color: white;
       display: inline-block;
       padding: 8px 24px;
@@ -125,6 +126,7 @@ $color: #007974;
 
       &:hover {
         text-decoration: none;
+        border-bottom: none;
       }
     }
   }
