@@ -54,7 +54,7 @@ $border-radius: 4px;
 $color: #298ada;
 
 .topnavAndBanner {
-  background: url("../assets/bg.png");
+  background: linear-gradient(145deg, rgb(34 95 146) 0%, rgb(44 107 156) 100%);
   /*background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%, rgba(183, 233, 230, 1) 100%);*/
   clip-path: ellipse(80% 60% at 50% 40%);
 }
